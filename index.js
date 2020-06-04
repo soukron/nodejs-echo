@@ -13,7 +13,7 @@ const api = require('./api.js');
 var app = express();
 
 // middlewares
-app.use(morgan('combined'));
+app.use(morgan(':remote-addr (:req[Forwarded]) - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
 // api module under /api prefix
 app.use(prefix, api);
